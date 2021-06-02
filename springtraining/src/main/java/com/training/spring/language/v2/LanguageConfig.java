@@ -67,7 +67,8 @@ public class LanguageConfig {
     //    }
 
     @Bean
-    @Qualifier("v2")
+    // @Qualifier("v2")
+    @LanguageV2
     public Language languageCreation() {
         return new Language();
     }

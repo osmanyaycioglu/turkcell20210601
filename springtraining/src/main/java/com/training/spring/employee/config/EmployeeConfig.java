@@ -1,0 +1,24 @@
+package com.training.spring.employee.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.training.spring.employee.data.EmployeeStorageManager;
+import com.training.spring.employee.data.IEmployeeStorage;
+import com.training.spring.employee.service.EmployeeManager;
+
+@Configuration
+public class EmployeeConfig {
+
+
+    @Bean
+    public IEmployeeStorage employeeStorage() {
+        return new EmployeeStorageManager();
+    }
+
+    @Bean
+    public EmployeeManager employeeManager() {
+        return new EmployeeManager();
+    }
+
+}
