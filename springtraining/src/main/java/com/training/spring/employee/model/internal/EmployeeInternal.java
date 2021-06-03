@@ -2,15 +2,26 @@ package com.training.spring.employee.model.internal;
 
 import java.time.LocalDate;
 
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 import com.training.spring.employee.model.external.Employee;
 import com.training.spring.rest.EGender;
 
+@Entity
 public class EmployeeInternal {
 
+    @Id
+    @GeneratedValue
+    private Long      empId;
     private String    name;
     private String    surname;
     private int       height;
     private LocalDate birthdate;
+    @Enumerated(EnumType.STRING)
     private EGender   gender;
 
 
@@ -91,6 +102,14 @@ public class EmployeeInternal {
         builderLoc.append(this.gender);
         builderLoc.append("]");
         return builderLoc.toString();
+    }
+
+    public Long getEmpId() {
+        return this.empId;
+    }
+
+    public void setEmpId(final Long empIdParam) {
+        this.empId = empIdParam;
     }
 
 }

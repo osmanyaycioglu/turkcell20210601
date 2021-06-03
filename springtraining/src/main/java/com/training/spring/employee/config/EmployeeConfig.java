@@ -3,7 +3,7 @@ package com.training.spring.employee.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.training.spring.employee.data.EmployeeStorageManager;
+import com.training.spring.employee.data.DBEmployeeStorageManager;
 import com.training.spring.employee.data.IEmployeeStorage;
 import com.training.spring.employee.service.EmployeeManager;
 
@@ -13,7 +13,7 @@ public class EmployeeConfig {
 
     @Bean
     public IEmployeeStorage employeeStorage() {
-        return new EmployeeStorageManager();
+        return new DBEmployeeStorageManager();
     }
 
     @Bean
